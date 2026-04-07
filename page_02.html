@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 02 — Typography
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      Notes:
+      - Exploring Bootstrap’s built‑in typography utilities.
+      - Demonstrating headings, display classes, lead text, and inline formatting.
+      - Bootstrap 5 typography is cleaner and more flexible than Bootstrap 4.
+      ============================================
+    -->
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+    <title>Lesson 02 — Typography</title>
+  </head>
+
+  <body>
+
+    <h1 class="text-center mt-5">Lesson 02 — Typography</h1>
+
+    <div class="container mt-4">
+
+      <!--
+        ============================================
+        SECTION: Standard HTML Headings
+        Teaching Notes:
+        - These are semantic headings used by browsers, search engines,
+          and screen readers.
+        - Even if you style text to look like a heading, semantic structure
+          still matters for accessibility and SEO.
+        ============================================
+      -->
+      <h1>h1. Bootstrap heading</h1>
+      <h2>h2. Bootstrap heading</h2>
+      <h3>h3. Bootstrap heading</h3>
+      <h4>h4. Bootstrap heading</h4>
+      <h5>h5. Bootstrap heading</h5>
+      <h6>h6. Bootstrap heading</h6>
+
+      <hr>
+
+      <!--
+        ============================================
+        SECTION: Bootstrap Heading Utility Classes (.h1–.h6)
+        Teaching Notes:
+        - These classes style text to LOOK like headings without changing
+          the underlying HTML element.
+        - Useful when you need heading-sized text inside a <p> or <div>.
+        - Great for visual hierarchy without semantic hierarchy.
+        ============================================
+      -->
+      <p class="h1">h1. Bootstrap heading</p>
+      <p class="h2">h2. Bootstrap heading</p>
+      <p class="h3">h3. Bootstrap heading</p>
+      <p class="h4">h4. Bootstrap heading</p>
+      <p class="h5">h5. Bootstrap heading</p>
+      <p class="h6">h6. Bootstrap heading</p>
+
+      <hr>
+
+      <!--
+        ============================================
+        SECTION: Display Headings
+        Teaching Notes:
+        - Display classes create large, bold, attention-grabbing headings.
+        - Perfect for hero sections, landing pages, and big titles.
+        - Bootstrap 5 added display-5 and display-6 for more flexibility.
+        ============================================
+      -->
+      <h1 class="display-1">Display 1</h1>
+      <h1 class="display-2">Display 2</h1>
+      <h1 class="display-3">Display 3</h1>
+      <h1 class="display-4">Display 4</h1>
+      <h1 class="display-5">Display 5</h1>
+      <h1 class="display-6">Display 6</h1>
+
+      <hr>
+
+      <!--
+        ============================================
+        SECTION: Lead Paragraph
+        Teaching Notes:
+        - Lead text is slightly larger and spaced differently.
+        - Great for introductions, summaries, or opening paragraphs.
+        ============================================
+      -->
+      <p class="lead">
+        This is a lead paragraph. It stands out from regular paragraphs.
+      </p>
+
+      <!--
+        ============================================
+        SECTION: Inline Text Elements
+        Teaching Notes:
+        - Bootstrap enhances but does not replace HTML inline tags.
+        - Useful tags:
+          <mark>   highlight text
+          <small>  fine print
+          <strong> bold/important
+          <em>     italics/emphasis
+        ============================================
+      -->
+      <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+
+      <!--
+        ============================================
+        EXTRA EXAMPLES (Optional Additions)
+        These examples expand the lesson and demonstrate more typography utilities.
+        ============================================
+      -->
+
+      <!-- Muted Text -->
+      <p class="text-muted">This text is muted and less prominent.</p>
+
+      <!-- Text Transform Utilities -->
+      <p class="text-uppercase">uppercase text</p>
+      <p class="text-lowercase">LOWERCASE TEXT</p>
+      <p class="text-capitalize">capitalize each word</p>
+
+      <!-- Font Weight Utilities -->
+      <p class="fw-bold">Bold text</p>
+      <p class="fw-light">Light text</p>
+      <p class="fw-semibold">Semi-bold text</p>
+
+      <!-- Text Alignment -->
+      <p class="text-start">Left aligned</p>
+      <p class="text-center">Centered</p>
+      <p class="text-end">Right aligned</p>
+
+      <!--
+        ============================================
+        COMMON MISTAKES
+        - Using display classes for normal headings (too large).
+        - Using .h1 classes instead of real <h1> tags (bad for SEO/accessibility).
+        - Forgetting spacing utilities like mt-3 or mb-4.
+        - Using <br> for spacing instead of Bootstrap spacing utilities.
+        ============================================
+      -->
+
+      <!--
+        ============================================
+        TRY IT YOURSELF CHALLENGE
+        Instructions:
+        1. Add a display heading.
+        2. Add a lead paragraph.
+        3. Add a normal paragraph containing:
+           - one <mark>
+           - one <strong>
+           - one <small>
+        4. Add a centered, uppercase sentence using Bootstrap utilities.
+        ============================================
+      -->
+
+      <!-- Example Goal:
+           "WELCOME TO MY BOOTSTRAP PAGE"
+           centered and uppercase using classes only.
+      -->
+
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+  </body>
+</html>
