@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 09 — Cards
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      Notes:
+      - Cards are flexible content containers used for images, text, lists, links, and navigation.
+      - Bootstrap 5 card components include:
+          * .card — main wrapper
+          * .card-body — padded content area
+          * .card-title — heading inside the card
+          * .card-text — paragraph text
+          * .card-img-top — image placed at the top of the card
+          * .list-group / .list-group-flush — lists inside cards
+          * .card-header / .card-footer — optional header/footer sections
+      - Cards can be combined with nav tabs, buttons, list groups, and grid layouts.
+      - Cards automatically size to their content unless a width is set.
+      - Bootstrap 5 simplifies card spacing using utility classes (mb-3, mt-4, p-3, etc.).
+      ============================================
+    -->
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Lesson 09 — Cards</title>
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       LESSON TITLE
+       ============================================ -->
+  <h1 class="text-center mt-5">Lesson 09 — Cards</h1>
+
+  <div class="container mt-4">
+
+    <!-- ============================================
+         BASIC CARD WITH IMAGE + LIST GROUP + LINKS
+         ============================================
+         Teaching Notes:
+         - .card-img-top places an image at the top of the card.
+         - .card-body holds the main content (title, text, buttons, etc.).
+         - .list-group-flush removes the outer card borders for a cleaner look.
+         - Cards can mix multiple components: images, lists, links, and text.
+       -->
+    <h3>Basic Card Example</h3>
+
+    <div class="card mb-4" style="width: 18rem;">
+      <img src="flamingo_sunset.png" class="card-img-top" alt="Flamingo Sunset">
+      <div class="card-body">
+        <h5 class="card-title">God created the Heavens...</h5>
+        <p class="card-text">The World will be judged by a Jew... His name is "JESUS".</p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+      </ul>
+
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- ============================================
+         CARD WITH NAV TABS IN HEADER
+         ============================================
+         Teaching Notes:
+         - Cards can contain navigation elements inside the header.
+         - .card-header-tabs styles nav tabs to sit flush inside the card header.
+         - Great for switching between content sections inside a card layout.
+         - The active tab uses aria-current="true" for accessibility.
+       -->
+    <h3>Card with Tabbed Header</h3>
+
+    <div class="card text-center mb-4">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="true" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">
+          With supporting text below as a natural lead‑in to additional content.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- ============================================
+         TRY IT YOURSELF CHALLENGE
+         ============================================
+         1. Create a card with a footer.
+         2. Add a button inside the card body.
+         3. Create a horizontal card using .row and .col-*.
+       -->
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
