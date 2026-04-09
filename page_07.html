@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 07 — Breadcrumbs
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      Notes:
+      - Breadcrumbs show the user's current location within a hierarchy.
+      - Bootstrap 5 uses:
+          * <nav aria-label="breadcrumb">
+          * <ol class="breadcrumb">
+          * <li class="breadcrumb-item">
+      - The final item uses:
+          * .active
+          * aria-current="page"
+      - No JavaScript required — breadcrumbs are purely HTML/CSS.
+      ============================================
+    -->
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Lesson 07 — Breadcrumbs</title>
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       LESSON TITLE
+       ============================================ -->
+  <h1 class="text-center mt-5">Lesson 07 — Breadcrumbs</h1>
+
+  <div class="container mt-4">
+
+    <!-- ============================================
+         BASIC BREADCRUMB
+         ============================================
+         Teaching Notes:
+         - A single breadcrumb item can still be useful
+           to show the root of a section.
+       -->
+    <h3>Basic Breadcrumb</h3>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+      </ol>
+    </nav>
+
+    <hr>
+
+    <!-- ============================================
+         TWO-LEVEL BREADCRUMB
+         ============================================
+         Teaching Notes:
+         - The last item is always .active.
+         - Previous items should be links.
+       -->
+    <h3>Two-Level Breadcrumb</h3>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Library</li>
+      </ol>
+    </nav>
+
+    <hr>
+
+    <!-- ============================================
+         THREE-LEVEL BREADCRUMB
+         ============================================
+         Teaching Notes:
+         - Breadcrumbs help users understand hierarchy.
+         - Great for dashboards, admin panels, and docs.
+       -->
+    <h3>Three-Level Breadcrumb</h3>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+
+    <hr>
+
+    <!-- ============================================
+         TRY IT YOURSELF CHALLENGE
+         ============================================
+         1. Create a breadcrumb with four levels.
+         2. Add custom spacing using Bootstrap utilities.
+         3. Add icons to breadcrumb items using Bootstrap Icons.
+       -->
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
