@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 14 — Input Group
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      TEACHING NOTES:
+
+      • Input Groups allow you to prepend or append text, icons, or buttons
+        directly to an input field.
+
+      • Bootstrap 5 removed .input-group-prepend and .input-group-append.
+        Instead, you place .input-group-text directly inside .input-group.
+
+      • Use aria-describedby to associate the input with the attached text
+        for accessibility.
+
+      • Common use cases:
+          - Username fields
+          - Currency formatting
+          - Email domain fields
+          - URL builders
+          - Textareas with labels
+
+      • Help text (.form-text) always goes OUTSIDE the input group.
+
+      • No jQuery required in Bootstrap 5 — only the JS bundle.
+      ============================================
+    -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Lesson 14 - Input Group</title>
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       LESSON TITLE
+       ============================================ -->
+  <h1 class="text-center mt-5">Lesson 14 - Input Group</h1>
+
+  <div class="container mt-4">
+
+    <!--
+        ============================================
+        EXAMPLE 1 — Username with prepended @
+        Notes:
+        • .input-group wraps the entire component.
+        • .input-group-text attaches static text to the input.
+        • aria-describedby links the input to the attached text.
+        ============================================
+      -->
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+        aria-describedby="basic-addon1">
+    </div>
+
+    <!--
+        ============================================
+        EXAMPLE 2 — Username with appended domain
+        Notes:
+        • Same structure, but text is appended instead of prepended.
+        • Bootstrap 5 handles both directions automatically.
+        ============================================
+      -->
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Recipient’s username" aria-label="Recipient’s username"
+        aria-describedby="basic-addon2">
+      <span class="input-group-text" id="basic-addon2">@example.com</span>
+    </div>
+
+    <!--
+        ============================================
+        EXAMPLE 3 — Vanity URL builder
+        Notes:
+        • Label sits outside the input group.
+        • Help text (.form-text) also sits outside the group.
+        • aria-describedby can reference multiple IDs.
+        ============================================
+      -->
+    <div class="mb-3">
+      <label for="basic-url" class="form-label">Your vanity URL</label>
+      <div class="input-group">
+        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+      </div>
+      <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div>
+    </div>
+
+    <!--
+        ============================================
+        EXAMPLE 4 — Currency formatting
+        Notes:
+        • Perfect example of prepend + append.
+        • Useful for price fields, donations, invoices, etc.
+        ============================================
+      -->
+    <div class="input-group mb-3">
+      <span class="input-group-text">$</span>
+      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <span class="input-group-text">.00</span>
+    </div>
+
+    <!--
+        ============================================
+        EXAMPLE 5 — Two inputs with a middle symbol
+        Notes:
+        • Input groups can contain multiple inputs.
+        • Great for email/server combos, login fields, etc.
+        ============================================
+      -->
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+      <span class="input-group-text">@</span>
+      <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+    </div>
+
+    <!--
+        ============================================
+        EXAMPLE 6 — Textarea input group
+        Notes:
+        • Works exactly like a normal input.
+        • .form-control automatically expands the textarea.
+        ============================================
+      -->
+    <div class="input-group">
+      <span class="input-group-text">With textarea</span>
+      <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
