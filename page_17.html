@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 17 — Modals
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      TEACHING NOTES:
+
+      • Modals are dialog boxes that appear on top of the page.
+        They are used for alerts, confirmations, forms, and messages.
+
+      • Bootstrap 5 uses data-bs-* attributes instead of data-*:
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+
+      • A modal has 3 main parts:
+            1. .modal-header
+            2. .modal-body
+            3. .modal-footer
+
+      • STATIC BACKDROP MODAL:
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+
+        This prevents the modal from closing when:
+            - Clicking outside the modal
+            - Pressing the ESC key
+
+        It will ONLY close using:
+            - The X button
+            - The Close button
+            - The Understood button
+
+      • .fade adds the fade animation.
+      • Bootstrap 5 modals run on pure JS (no jQuery).
+
+      ============================================
+    -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Lesson 17 - Modals</title>
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       LESSON TITLE
+       ============================================ -->
+  <h1 class="text-center mt-5">Lesson 17 - Modals</h1>
+
+  <div class="container mt-4">
+
+    <!--
+        ============================================
+        BUTTON TO TRIGGER MODAL
+        Notes:
+        • data-bs-toggle="modal" tells Bootstrap to open a modal.
+        • data-bs-target="#staticBackdrop" links to the modal ID.
+        ============================================
+      -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Launch static backdrop modal
+    </button>
+
+    <!--
+        ============================================
+        STATIC BACKDROP MODAL (Matches Screenshot)
+        Notes:
+        • data-bs-backdrop="static" prevents closing by clicking outside.
+        • data-bs-keyboard="false" disables ESC key closing.
+        • .fade adds animation.
+        • tabindex="-1" ensures proper focus handling.
+        ============================================
+      -->
+    <div class="modal fade" id="staticBackdrop"
+         data-bs-backdrop="static"
+         data-bs-keyboard="false"
+         tabindex="-1"
+         aria-labelledby="staticBackdropLabel"
+         aria-hidden="true">
+
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal header -->
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Modal body (Updated to match screenshot) -->
+          <div class="modal-body">
+            I will not close if you click outside of me. Don’t even try to press escape key.
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
