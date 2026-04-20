@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 24 Demo — Containers (Visual Comparison)
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      TEACHING NOTES:
+
+      • This demo visually compares all container types.
+      • Each container has a different background color.
+      • The outer background is dark so widths stand out.
+      • Resize the browser to see breakpoint containers change.
+      • This demo is intentionally bold and visual.
+
+      ============================================
+    -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Lesson 24 Demo - Containers</title>
+
+  <style>
+    body {
+      background: #222; /* Dark background so containers pop */
+      color: white;
+    }
+
+    .demo-box {
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .box-standard { background: #0d6efd; }   /* Blue */
+    .box-sm       { background: #198754; }   /* Green */
+    .box-md       { background: #ffc107; color: #222; } /* Yellow */
+    .box-lg       { background: #fd7e14; }   /* Orange */
+    .box-xl       { background: #6f42c1; }   /* Purple */
+    .box-xxl      { background: #d63384; }   /* Pink */
+    .box-fluid    { background: #20c997; }   /* Teal */
+  </style>
+
+</head>
+
+<body>
+
+  <h1 class="text-center mt-4">Lesson 24 Demo — Visual Containers</h1>
+  <p class="text-center">Resize your browser to see how each container behaves.</p>
+
+  <!-- STANDARD CONTAINER -->
+  <div class="container box-standard demo-box">
+    .container — fixed width at breakpoints
+  </div>
+
+  <!-- BREAKPOINT CONTAINERS -->
+  <div class="container-sm box-sm demo-box">
+    .container-sm — full width until ≥576px
+  </div>
+
+  <div class="container-md box-md demo-box">
+    .container-md — full width until ≥768px
+  </div>
+
+  <div class="container-lg box-lg demo-box">
+    .container-lg — full width until ≥992px
+  </div>
+
+  <div class="container-xl box-xl demo-box">
+    .container-xl — full width until ≥1200px
+  </div>
+
+  <div class="container-xxl box-xxl demo-box">
+    .container-xxl — full width until ≥1400px
+  </div>
+
+  <!-- FLUID CONTAINER -->
+  <div class="container-fluid box-fluid demo-box">
+    .container-fluid — always 100% wide
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
