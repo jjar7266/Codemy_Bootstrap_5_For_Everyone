@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 21 — Progress Bars
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      TEACHING NOTES:
+
+      • A progress bar visually represents the completion level of a task.
+        Common uses:
+            - File uploads
+            - Form completion
+            - Loading states
+            - Task progress in apps
+
+      • Bootstrap 5 progress bars use two main elements:
+            1. .progress       → the outer container
+            2. .progress-bar   → the inner bar that fills
+
+      • The width of the bar controls the progress:
+            style="width: 75%"
+
+        This can be updated dynamically with JavaScript.
+
+      • Accessibility attributes:
+            aria-valuenow   → current value
+            aria-valuemin   → minimum value (usually 0)
+            aria-valuemax   → maximum value (usually 100)
+
+      • Striped bars:
+            .progress-bar-striped
+
+      • Animated stripes:
+            .progress-bar-animated
+
+      • Contextual colors:
+            bg-success, bg-info, bg-warning, bg-danger
+
+      • HOW THIS CONNECTS TO SCRIPTS:
+        You can update progress bars in real time using JavaScript:
+            document.querySelector('.progress-bar').style.width = "40%"
+
+        This makes progress bars useful for:
+            - AJAX uploads
+            - Timers
+            - Multi-step forms
+            - Background tasks
+
+      ============================================
+    -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Lesson 21 - Progress Bars</title>
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       LESSON TITLE
+       ============================================ -->
+  <h1 class="text-center mt-5">Lesson 21 - Progress Bars</h1>
+
+  <div class="container mt-4">
+
+    <!-- ============================================
+         ANIMATED STRIPED PROGRESS BAR
+         Notes:
+         • .progress-bar-striped adds stripes.
+         • .progress-bar-animated makes stripes move.
+         • style="width: 75%" controls the fill level.
+         ============================================ -->
+    <div class="progress mb-4"
+         role="progressbar"
+         aria-label="Animated striped example"
+         aria-valuenow="75"
+         aria-valuemin="0"
+         aria-valuemax="100">
+      <div class="progress-bar progress-bar-striped progress-bar-animated"
+           style="width: 75%"></div>
+    </div>
+
+    <!-- ============================================
+         STRIPED PROGRESS BARS WITH COLORS
+         Notes:
+         • Each bar uses a contextual background color.
+         • Width values represent completion percentage.
+         ============================================ -->
+
+    <!-- Default striped -->
+    <div class="progress mb-3"
+         role="progressbar"
+         aria-label="Default striped example"
+         aria-valuenow="10"
+         aria-valuemin="0"
+         aria-valuemax="100">
+      <div class="progress-bar progress-bar-striped"
+           style="width: 10%"></div>
+    </div>
+
+    <!-- Success -->
+    <div class="progress mb-3"
+         role="progressbar"
+         aria-label="Success striped example"
+         aria-valuenow="25"
+         aria-valuemin="0"
+         aria-valuemax="100">
+      <div class="progress-bar progress-bar-striped bg-success"
+           style="width: 25%"></div>
+    </div>
+
+    <!-- Info -->
+    <div class="progress mb-3"
+         role="progressbar"
+         aria-label="Info striped example"
+         aria-valuenow="50"
+         aria-valuemin="0"
+         aria-valuemax="100">
+      <div class="progress-bar progress-bar-striped bg-info"
+           style="width: 50%"></div>
+    </div>
+
+    <!-- Warning -->
+    <div class="progress mb-3"
+         role="progressbar"
+         aria-label="Warning striped example"
+         aria-valuenow="75"
+         aria-valuemin="0"
+         aria-valuemax="100">
+      <div class="progress-bar progress-bar-striped bg-warning"
+           style="width: 75%"></div>
+    </div>
+
+    <!-- Danger -->
+    <div class="progress mb-3"
+         role="progressbar"
+         aria-label="Danger striped example"
+         aria-valuenow="100"
+         aria-valuemin="0"
+         aria-valuemax="100">
+      <div class="progress-bar progress-bar-striped bg-danger"
+           style="width: 100%"></div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
