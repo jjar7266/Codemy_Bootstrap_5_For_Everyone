@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 23 — Tooltips
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      TEACHING NOTES:
+
+      WHAT TOOLTIPS ARE:
+      • Tooltips are small text boxes that appear when the user hovers
+        over or focuses on an element.
+      • They help explain buttons, icons, or features without clutter.
+
+      HOW THEY WORK:
+      • Add: data-bs-toggle="tooltip"
+      • Add: data-bs-title="Your text"
+      • Initialize them with JavaScript (required!)
+
+      PLACEMENT OPTIONS:
+      • top
+      • right
+      • bottom
+      • left
+
+      REAL-WORLD USES:
+      • Form help text
+      • Icon explanations
+      • Button descriptions
+      • Dashboard hints
+
+      IMPORTANT:
+      • Tooltips DO NOT work automatically.
+      • You MUST initialize them with JavaScript or they won't appear.
+
+      ============================================
+    -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Lesson 23 - Tooltips</title>
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       LESSON TITLE
+       ============================================ -->
+  <h1 class="text-center mt-5">Lesson 23 - Tooltips</h1>
+
+  <div class="container mt-4">
+
+    <!-- ============================================
+         TOOLTIP BUTTONS (SPACED OUT NICELY)
+         Notes:
+         • m-2 adds margin around each button.
+         • data-bs-title is the tooltip text.
+         • data-bs-placement controls where it appears.
+         ============================================ -->
+
+    <button type="button" class="btn btn-secondary m-2"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="Tooltip on top">
+      Tooltip on top
+    </button>
+
+    <button type="button" class="btn btn-secondary m-2"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-title="Tooltip on right">
+      Tooltip on right
+    </button>
+
+    <button type="button" class="btn btn-secondary m-2"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Tooltip on bottom">
+      Tooltip on bottom
+    </button>
+
+    <button type="button" class="btn btn-secondary m-2"
+            data-bs-toggle="tooltip"
+            data-bs-placement="left"
+            data-bs-title="Tooltip on left">
+      Tooltip on left
+    </button>
+
+    <!--
+      m-2 = margin spacing around each button
+      This gives the example breathing room and makes it look clean.
+    -->
+
+    <!-- ============================================
+         TRY IT YOURSELF CHALLENGE
+         ============================================
+
+         • Add a tooltip to an icon or image.
+         • Try changing the placement.
+         • Try adding tooltips to form fields.
+
+       ============================================ -->
+
+  </div>
+
+  <!-- ============================================
+       BOOTSTRAP JS + TOOLTIP INITIALIZATION
+       ============================================ -->
+
+  <!-- Bootstrap JS Bundle (required for tooltips) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    /*
+      Bootstrap requires JavaScript to activate tooltips.
+      This script finds every element with data-bs-toggle="tooltip"
+      and turns it into a working tooltip.
+    */
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl =>
+      new bootstrap.Tooltip(tooltipTriggerEl)
+    );
+  </script>
+
+</body>
+
+</html>
