@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 22 — Scrollspy
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      SIMPLE EXPLANATION:
+
+      • Scrollspy highlights the menu link for the section
+        you're currently looking at.
+
+      • As you scroll through the content, the navigation
+        updates automatically.
+
+      • For Scrollspy to work, the content MUST be scrollable.
+        That’s why we give the box a height and overflow.
+
+      • The menu links must match the section IDs.
+        Example: href="#section1" → id="section1"
+
+      ============================================
+    -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Make the scrollspy box scrollable -->
+  <style>
+    .scrollspy-example {
+      height: 300px;        /* Gives the box height so it can scroll */
+      overflow-y: scroll;   /* Allows the content to move up/down */
+    }
+  </style>
+
+  <title>Lesson 22 - Scrollspy</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- LESSON TITLE -->
+  <h1 class="text-center mt-5">Lesson 22 - Scrollspy</h1>
+
+  <div class="container mt-4">
+
+    <!-- MENU THAT WILL UPDATE AS YOU SCROLL -->
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#scrollspyHeading1">First</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#scrollspyHeading2">Second</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- SCROLLABLE CONTENT AREA -->
+    <div data-bs-spy="scroll"
+         data-bs-target="#navbar-example2"
+         data-bs-smooth-scroll="true"
+         class="scrollspy-example bg-body-tertiary p-3 rounded-2"
+         tabindex="0">
+
+      <h4 id="scrollspyHeading1">First heading</h4>
+      <p>
+        This is the first section of the Scrollspy example. As you scroll down,
+        watch how the navigation menu on top highlights the link for the section
+        you're currently viewing.
+      </p>
+
+      <h4 id="scrollspyHeading2">Second heading</h4>
+      <p>
+        This is the second section. Scrollspy is useful for long pages because
+        it helps users understand where they are and quickly jump to other
+        sections using the navigation menu.
+      </p>
+
+      <h4 id="scrollspyHeading3">Third heading</h4>
+      <p>
+        This is the third section. Notice how the menu updates automatically
+        without any JavaScript from you — Bootstrap handles everything behind
+        the scenes.
+      </p>
+
+      <h4 id="scrollspyHeading4">Fourth heading</h4>
+      <p>
+        This is the fourth section. Scrollspy works by watching the scroll
+        position inside this box and matching it to the section IDs listed in
+        the navigation menu.
+      </p>
+
+      <h4 id="scrollspyHeading5">Fifth heading</h4>
+      <p>
+        This is the final section. Once you reach this point, the “Fifth”
+        navigation link becomes active. Scrollspy is simple but powerful for
+        documentation, tutorials, and long-form content.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
