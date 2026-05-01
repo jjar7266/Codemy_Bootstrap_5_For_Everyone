@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 25‑3 — Grid Numbering
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      TEACHING NOTES:
+
+      WHAT GRID NUMBERING MEANS:
+      • Bootstrap’s grid is based on 12 units per row.
+      • Numbered columns (e.g., .col-2, .col-4, .col-6) let you
+        explicitly control how much width each column takes.
+      • The numbers must add up to 12 (or less).
+
+      WHY THIS MATTERS:
+      • Gives you precise control over layout.
+      • Lets you create sidebars, content areas, and custom widths.
+      • Helps you design predictable, balanced layouts.
+
+      EXAMPLES:
+      • .col-2  → takes 2/12 of the row
+      • .col-4  → takes 4/12 of the row
+      • .col-6  → takes 6/12 of the row
+
+      REAL‑WORLD USES:
+      • Sidebars + main content
+      • Product cards with fixed widths
+      • Dashboard layouts
+      • Form layouts with label/content ratios
+
+      ============================================
+    -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Lesson 25‑3 - Grid Numbering</title>
+
+  <style>
+    /* Simple styling so columns are visible */
+    .demo-col {
+      background: #e9ecef;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 5px 0;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       LESSON TITLE
+       ============================================ -->
+  <h1 class="text-center mt-5">Lesson 25‑3 — Grid Numbering</h1>
+
+  <div class="container mt-5">
+
+    <!-- ============================================
+         GRID WITH NUMBERED COLUMNS
+         ============================================
+         • .col-2  → 2/12 width
+         • .col-4  → 4/12 width
+         • .col-6  → 6/12 width
+         • Total = 12 (full row)
+         ============================================ -->
+    <h3 class="mb-3">Using Numbered Columns</h3>
+
+    <div class="row text-center">
+      <div class="col-2 bg-secondary text-white demo-col">2 Units</div>
+      <div class="col-4 bg-info text-white demo-col">4 Units</div>
+      <div class="col-6 bg-danger text-white demo-col">6 Units</div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
