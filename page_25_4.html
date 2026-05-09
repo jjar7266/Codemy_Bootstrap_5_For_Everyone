@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 25‑4 — Responsive Grid Breakpoints
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      TEACHING NOTES:
+
+      WHAT RESPONSIVE BREAKPOINTS DO:
+      • Breakpoints let you change column behavior at different screen sizes.
+      • They allow layouts to adapt on phones, tablets, laptops, and desktops.
+      • Bootstrap has 6 breakpoint tiers: xs, sm, md, lg, xl, xxl.
+
+      BREAKPOINT PREFIXES:
+      • .col‑sm‑4  → applies at ≥ 576px (small devices)
+      • .col‑md‑4  → applies at ≥ 768px (tablets)
+      • .col‑lg‑4  → applies at ≥ 992px (laptops)
+      • .col‑xl‑4  → applies at ≥ 1200px (desktops)
+      • .col‑xxl‑4 → applies at ≥ 1400px (large desktops)
+
+      WHY THIS MATTERS:
+      • Prevents cramped layouts on phones.
+      • Lets you design multi‑column tablet/desktop layouts.
+      • Gives you full control over how content stacks or spreads.
+
+      REAL‑WORLD USES:
+      • Product grids that go 1 → 2 → 4 columns.
+      • Responsive dashboards.
+      • Mobile‑friendly card layouts.
+      • Adaptive sidebars.
+
+      ============================================
+    -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Lesson 25‑4 - Responsive Grid Breakpoints</title>
+
+  <style>
+    /* Simple styling so columns are visible */
+    .demo-col {
+      background: #e9ecef;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 5px 0;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       LESSON TITLE
+       ============================================ -->
+  <h1 class="text-center mt-5">Lesson 25‑4 — Responsive Grid Breakpoints</h1>
+
+  <div class="container mt-5">
+
+    <!-- ============================================
+         1. NO BREAKPOINTS (ALWAYS EQUAL)
+         ============================================
+         • All columns share equal width.
+         • They stack on phones automatically.
+         ============================================ -->
+    <h3 class="mb-3">1. No Breakpoints (Equal Columns)</h3>
+
+    <div class="row text-center">
+      <div class="col demo-col">col</div>
+      <div class="col demo-col">col</div>
+      <div class="col demo-col">col</div>
+      <div class="col demo-col">col</div>
+    </div>
+
+    <!-- ============================================
+         2. SMALL BREAKPOINT (≥ 576px)
+         ============================================
+         • On phones: 1 column
+         • On small screens: 2 columns
+         • On tablets/desktops: 2 columns
+         ============================================ -->
+    <h3 class="mt-5 mb-3">2. Small Breakpoint — .col-sm-6</h3>
+
+    <div class="row text-center">
+      <div class="col-12 col-sm-6 demo-col">col‑12 col‑sm‑6</div>
+      <div class="col-12 col-sm-6 demo-col">col‑12 col‑sm‑6</div>
+    </div>
+
+    <!-- ============================================
+         3. MEDIUM BREAKPOINT (≥ 768px)
+         ============================================
+         • Phones: 1 column
+         • Tablets: 2 columns
+         • Desktops: 2 columns
+         ============================================ -->
+    <h3 class="mt-5 mb-3">3. Medium Breakpoint — .col-md-6</h3>
+
+    <div class="row text-center">
+      <div class="col-12 col-md-6 demo-col">col‑12 col‑md‑6</div>
+      <div class="col-12 col-md-6 demo-col">col‑12 col‑md‑6</div>
+    </div>
+
+    <!-- ============================================
+         4. LARGE BREAKPOINT (≥ 992px)
+         ============================================
+         • Phones: 1 column
+         • Tablets: 2 columns
+         • Laptops: 4 columns
+         ============================================ -->
+    <h3 class="mt-5 mb-3">4. Large Breakpoint — 1 → 2 → 4 Columns</h3>
+
+    <div class="row text-center">
+      <div class="col-12 col-sm-6 col-lg-3 demo-col">Responsive Box</div>
+      <div class="col-12 col-sm-6 col-lg-3 demo-col">Responsive Box</div>
+      <div class="col-12 col-sm-6 col-lg-3 demo-col">Responsive Box</div>
+      <div class="col-12 col-sm-6 col-lg-3 demo-col">Responsive Box</div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
