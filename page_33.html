@@ -5,21 +5,15 @@
     <!--
       ============================================
       Codemy.com — Bootstrap 5 For Everyone
-      Lesson 33 — Bootstrap Cover Example (Coral Background + Expanded Notes)
+      Lesson 33 — Bootstrap Cover Example (Final Fix)
       Instructor: John Elder
       Student: Jose “Joe” Ruiz
-
-      Teaching Notes:
-      - Demonstrates Bootstrap’s Cover Template with a full-screen background image.
-      - Adds a semi-transparent Teaching Notes block for visual harmony.
-      - Expanded notes explain layout, flexbox, overlays, readability, and real-world use.
       ============================================
     -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Lesson 33 - Bootstrap Cover Example</title>
@@ -31,19 +25,19 @@
         }
 
         body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: #fff;
             text-align: center;
             background: url('coral_background.png') no-repeat center center fixed;
             background-size: cover;
+
+            /* navbar clearance */
+            padding-top: 5.5rem;
         }
 
-        /* Dark overlay for readability */
+        /* Dark overlay */
         body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -52,10 +46,19 @@
             z-index: 0;
         }
 
+        /* HERO SECTION — now centered properly */
         .cover-container {
             position: relative;
             z-index: 1;
             max-width: 42em;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 60vh; /* keeps hero centered without affecting notes */
+            margin: 0 auto;
         }
 
         .btn-primary {
@@ -63,13 +66,14 @@
             border: none;
         }
 
-        /* Transparent Teaching Notes (Glass Effect) */
+        /* Transparent Teaching Notes */
         .teaching-notes {
             background-color: rgba(255, 255, 255, 0.25);
             color: #fff;
             border-radius: 0.5rem;
             backdrop-filter: blur(6px);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
             margin-top: 3rem;
             padding: 2rem;
             position: relative;
@@ -88,9 +92,7 @@
 
 <body>
 
-    <!-- ============================================
-       NAVBAR (Course Standard)
-       ============================================ -->
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
@@ -112,9 +114,7 @@
         </div>
     </nav>
 
-    <!-- ============================================
-       COVER CONTENT
-       ============================================ -->
+    <!-- HERO -->
     <main class="cover-container">
         <h1 class="fw-light mb-4">Lesson 33 — Bootstrap Cover Example</h1>
         <p class="lead">
@@ -130,68 +130,51 @@
         </p>
     </main>
 
-    <!-- ============================================
-       EXPANDED TEACHING NOTES (Transparent)
-       ============================================ -->
+    <!-- TEACHING NOTES -->
     <div class="container teaching-notes">
         <h4>Teaching Notes</h4>
 
         <p><strong>1. Fullscreen Background Technique:</strong><br>
             We use <code>background-size: cover;</code> to ensure the coral reef image fills the entire viewport without
-            distortion. The <code>fixed</code> keyword keeps the background stationary while content scrolls, creating a
-            subtle parallax effect.
+            distortion. The <code>fixed</code> keyword keeps the background stationary while content scrolls.
         </p>
 
         <p><strong>2. Dark Overlay for Readability:</strong><br>
-            Bright images can make text unreadable. The <code>body::before</code> pseudo-element adds a semi-transparent
-            black overlay (<code>rgba(0,0,0,0.45)</code>) across the entire screen. This improves contrast without hiding
-            the background.
+            The <code>body::before</code> overlay improves contrast without hiding the background.
         </p>
 
         <p><strong>3. Centering Content with Flexbox:</strong><br>
-            The Cover Template uses <code>display: flex;</code> on the <code>body</code> to vertically and horizontally
-            center the hero text. This is cleaner and more responsive than older margin-based techniques.
+            The hero section is centered using flexbox, but the body is no longer flex-centered.
         </p>
 
         <p><strong>4. Max-Width for Readability:</strong><br>
-            The <code>.cover-container</code> is limited to <code>max-width: 42em;</code>. This prevents long line
-            lengths, which improves readability and keeps the hero text visually balanced.
+            The <code>.cover-container</code> is limited to <code>42em</code> for optimal line length.
         </p>
 
-        <p><strong>5. Transparent “Glass” Teaching Notes Block:</strong><br>
-            The notes use <code>rgba(255,255,255,0.25)</code> plus <code>backdrop-filter: blur(6px)</code> to create a
-            modern glassmorphism effect. This allows the coral reef background to show through while keeping the text
-            readable.
+        <p><strong>5. Transparent “Glass” Notes Block:</strong><br>
+            Uses <code>rgba(255,255,255,0.25)</code> and <code>backdrop-filter: blur(6px)</code>.
         </p>
 
-        <p><strong>6. Why This Layout Works Well for Landing Pages:</strong><br>
-            The Cover Template is intentionally minimal. It focuses the user’s attention on a single message or call to
-            action. The fullscreen background sets the mood, while the centered text delivers the core idea.
+        <p><strong>6. Why This Layout Works:</strong><br>
+            Minimal, centered, and visually striking — ideal for landing pages.
         </p>
 
         <p><strong>7. Real-World Use Cases:</strong><br>
             • App landing pages<br>
             • Portfolio intros<br>
             • Product announcements<br>
-            • “Coming Soon” pages<br>
-            • Hero sections for marketing sites
+            • Coming Soon pages
         </p>
 
         <p><strong>8. Accessibility Considerations:</strong><br>
-            • Ensure text contrast remains high enough over the background.<br>
-            • Avoid overly busy images behind important text.<br>
-            • Keep interactive elements clearly visible and easy to tap.
+            Maintain contrast, avoid busy backgrounds behind text.
         </p>
 
         <p><strong>9. Customization Ideas:</strong><br>
-            • Add a gradient overlay instead of a solid one.<br>
-            • Animate the background using CSS transitions.<br>
-            • Add a subtle drop shadow to the hero text.<br>
-            • Swap the background image based on time of day.
+            Add gradients, animations, or time‑based background swaps.
         </p>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
