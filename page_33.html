@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--
+      ============================================
+      Codemy.com — Bootstrap 5 For Everyone
+      Lesson 33 — Bootstrap Cover Example (Coral Background + Expanded Notes)
+      Instructor: John Elder
+      Student: Jose “Joe” Ruiz
+
+      Teaching Notes:
+      - Demonstrates Bootstrap’s Cover Template with a full-screen background image.
+      - Adds a semi-transparent Teaching Notes block for visual harmony.
+      - Expanded notes explain layout, flexbox, overlays, readability, and real-world use.
+      ============================================
+    -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Lesson 33 - Bootstrap Cover Example</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            background: url('coral_background.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Dark overlay for readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.45);
+            z-index: 0;
+        }
+
+        .cover-container {
+            position: relative;
+            z-index: 1;
+            max-width: 42em;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border: none;
+        }
+
+        /* Transparent Teaching Notes (Glass Effect) */
+        .teaching-notes {
+            background-color: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            border-radius: 0.5rem;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin-top: 3rem;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .teaching-notes h4 {
+            color: #fff;
+        }
+
+        .teaching-notes code {
+            color: #ffeb99;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================
+       NAVBAR (Course Standard)
+       ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Bootstrap 5 For Everyone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+       COVER CONTENT
+       ============================================ -->
+    <main class="cover-container">
+        <h1 class="fw-light mb-4">Lesson 33 — Bootstrap Cover Example</h1>
+        <p class="lead">
+            This lesson demonstrates Bootstrap’s Cover Template — a simple fullscreen layout perfect for landing pages,
+            hero sections, and minimal home screens.
+        </p>
+        <p class="lead">
+            <a href="#" class="btn btn-lg btn-primary fw-bold">Learn more</a>
+        </p>
+        <p class="mt-3 text-muted">
+            Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a> by <a
+                href="https://twitter.com/mdo" class="text-white">@mdo</a>.
+        </p>
+    </main>
+
+    <!-- ============================================
+       EXPANDED TEACHING NOTES (Transparent)
+       ============================================ -->
+    <div class="container teaching-notes">
+        <h4>Teaching Notes</h4>
+
+        <p><strong>1. Fullscreen Background Technique:</strong><br>
+            We use <code>background-size: cover;</code> to ensure the coral reef image fills the entire viewport without
+            distortion. The <code>fixed</code> keyword keeps the background stationary while content scrolls, creating a
+            subtle parallax effect.
+        </p>
+
+        <p><strong>2. Dark Overlay for Readability:</strong><br>
+            Bright images can make text unreadable. The <code>body::before</code> pseudo-element adds a semi-transparent
+            black overlay (<code>rgba(0,0,0,0.45)</code>) across the entire screen. This improves contrast without hiding
+            the background.
+        </p>
+
+        <p><strong>3. Centering Content with Flexbox:</strong><br>
+            The Cover Template uses <code>display: flex;</code> on the <code>body</code> to vertically and horizontally
+            center the hero text. This is cleaner and more responsive than older margin-based techniques.
+        </p>
+
+        <p><strong>4. Max-Width for Readability:</strong><br>
+            The <code>.cover-container</code> is limited to <code>max-width: 42em;</code>. This prevents long line
+            lengths, which improves readability and keeps the hero text visually balanced.
+        </p>
+
+        <p><strong>5. Transparent “Glass” Teaching Notes Block:</strong><br>
+            The notes use <code>rgba(255,255,255,0.25)</code> plus <code>backdrop-filter: blur(6px)</code> to create a
+            modern glassmorphism effect. This allows the coral reef background to show through while keeping the text
+            readable.
+        </p>
+
+        <p><strong>6. Why This Layout Works Well for Landing Pages:</strong><br>
+            The Cover Template is intentionally minimal. It focuses the user’s attention on a single message or call to
+            action. The fullscreen background sets the mood, while the centered text delivers the core idea.
+        </p>
+
+        <p><strong>7. Real-World Use Cases:</strong><br>
+            • App landing pages<br>
+            • Portfolio intros<br>
+            • Product announcements<br>
+            • “Coming Soon” pages<br>
+            • Hero sections for marketing sites
+        </p>
+
+        <p><strong>8. Accessibility Considerations:</strong><br>
+            • Ensure text contrast remains high enough over the background.<br>
+            • Avoid overly busy images behind important text.<br>
+            • Keep interactive elements clearly visible and easy to tap.
+        </p>
+
+        <p><strong>9. Customization Ideas:</strong><br>
+            • Add a gradient overlay instead of a solid one.<br>
+            • Animate the background using CSS transitions.<br>
+            • Add a subtle drop shadow to the hero text.<br>
+            • Swap the background image based on time of day.
+        </p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
